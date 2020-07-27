@@ -4,7 +4,7 @@ class Student
   def self.new_from_db(row)
     sql = <<-SQL
       new_student = Student.new
-      
+      new_student.id = row[0]
     SQL
   end
 
