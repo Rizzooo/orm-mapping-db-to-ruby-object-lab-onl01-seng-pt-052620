@@ -9,8 +9,6 @@ class Student
       new_student.grade = row[2]
       new_student
     SQL
-    
-    
   end
 
   def self.all
