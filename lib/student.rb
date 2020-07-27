@@ -26,8 +26,8 @@ class Student
     SQL
     
     DB[:conn].execute(sql, name).map |student|
-      
-  end
+      self.new_from_db(row)
+  end.first
   
   def save
     sql = <<-SQL
