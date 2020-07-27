@@ -17,7 +17,6 @@ class Student
     
     DB[:conn].execute(sql).map |student|
       self.new_from_db(row)
-    end
   end
 
   def self.find_by_name(name)
@@ -26,10 +25,9 @@ class Student
       WHERE name = ? LIMIT 1 
     SQL
     
-    DB[:conn].execute(sql, name).map |student|
+    DB[:conn].execute(sql,name).map |student|
       self.new_from_db(row)
   end
-  
   
   def save
     sql = <<-SQL
